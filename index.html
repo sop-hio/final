@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <link rel="icon" type="image/svg+xml" href="https://planets-fact-site-whro.vercel.app/vite.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planets</title>
+  <script type="module" crossorigin="" src="./Planets_files/index-f1d1730f.js.download"></script>
+  <link rel="stylesheet" href="./main.css">
+
+</head>
+
+<body>
+  <div id="root">
+    <div class="main">
+      <div class="headerAndNavBar">
+        <h1>THE PLANETS</h1>
+        <div class="burgerMenu">
+          <div class="hamburger-menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="21" style="opacity: 1;">
+              <g fill="#FFF" fill-rule="evenodd">
+                <path d="M0 0h24v3H0zM0 7h24v3H0zM0 14h24v3H0z">
+
+                </path>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="headMenu">
+          <div class="menu__links" id="menuLink">
+
+          </div>
+        </div>
+      </div>
+    
+      <hr class="mainHr">
+      <div class="headOptions">
+        <div class="headInfo">
+          <div class="option" style="--color: #545BFE;">
+            <p class="number">01</p>
+            <h1>Overview</h1>
+            <div class="rectangle"></div>
+          </div>
+          <div class="option" style="--color: #545BFE;">
+            <p class="number">02</p>
+            <h1><span>Internal</span> Structure</h1>
+            <div class="rectangle"></div>
+          </div>
+          <div class="option" style="--color: #545BFE;">
+            <p class="number">03</p>
+            <h1>Surface <span>Geology</span></h1>
+            <div class="rectangle"></div>
+          </div>
+        </div>
+      </div>
+      <hr class="mainHr">
+      <div class="middleDiv" id="content" style="display: flex;"><img class="mainImg" src="./Planets_files/planet-earth.svg" alt="">
+ 
+      </div>
+
+
+    </div>
+  </div>
+
+
+  <script src="./index.js"></script>
+  <script> 
+    Planets.getPlanets()
+    .then(e => {
+      e.forEach((res) => {
+        var menuLink = document.getElementById('menuLink');
+        menuLink.appendChild(Planets.getnavLink(res.name));
+      })
+    });
+    Planets.changePlanet('mercury');
+  </script>
+
+</body>
+
+</html>
